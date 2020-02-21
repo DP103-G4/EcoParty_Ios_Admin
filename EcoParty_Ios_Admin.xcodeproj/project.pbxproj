@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04B3835923FC0508006B57B1 /* AdminListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3835823FC0508006B57B1 /* AdminListTableViewController.swift */; };
-		04B3835B23FC053F006B57B1 /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3835A23FC053F006B57B1 /* UserListTableViewController.swift */; };
-		04B3835D23FC0C5E006B57B1 /* AdminSelfTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3835C23FC0C5E006B57B1 /* AdminSelfTableViewController.swift */; };
-		04B3835F23FC0D5C006B57B1 /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3835E23FC0D5C006B57B1 /* AdminLoginViewController.swift */; };
-		04B3836123FC0DBE006B57B1 /* AddAdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B3836023FC0DBE006B57B1 /* AddAdminViewController.swift */; };
+		04B383A423FF9AD7006B57B1 /* AdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B383A323FF9AD7006B57B1 /* AdminTableViewController.swift */; };
 		B683616923FBFB430019C14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683616823FBFB430019C14F /* AppDelegate.swift */; };
 		B683616B23FBFB430019C14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683616A23FBFB430019C14F /* SceneDelegate.swift */; };
 		B683616D23FBFB430019C14F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683616C23FBFB430019C14F /* ViewController.swift */; };
@@ -21,11 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04B3835823FC0508006B57B1 /* AdminListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdminListTableViewController.swift; path = EcoParty_Ios_Admin/Admin/AdminListTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		04B3835A23FC053F006B57B1 /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserListTableViewController.swift; path = EcoParty_Ios_Admin/Admin/UserListTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		04B3835C23FC0C5E006B57B1 /* AdminSelfTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdminSelfTableViewController.swift; path = /Users/mac/Documents/EcoParty_Ios_Admin/EcoParty_Ios_Admin/Admin/AdminSelfTableViewController.swift; sourceTree = "<absolute>"; };
-		04B3835E23FC0D5C006B57B1 /* AdminLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdminLoginViewController.swift; path = EcoParty_Ios_Admin/Admin/AdminLoginViewController.swift; sourceTree = SOURCE_ROOT; };
-		04B3836023FC0DBE006B57B1 /* AddAdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddAdminViewController.swift; path = EcoParty_Ios_Admin/Admin/AddAdminViewController.swift; sourceTree = SOURCE_ROOT; };
+		04B383A323FF9AD7006B57B1 /* AdminTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdminTableViewController.swift; path = Admin/AdminTableViewController.swift; sourceTree = "<group>"; };
 		B683616523FBFB430019C14F /* EcoParty_Ios_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoParty_Ios_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B683616823FBFB430019C14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B683616A23FBFB430019C14F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,19 +39,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04B3836223FC0F0F006B57B1 /* Admin */ = {
-			isa = PBXGroup;
-			children = (
-				04B3835C23FC0C5E006B57B1 /* AdminSelfTableViewController.swift */,
-				04B3835823FC0508006B57B1 /* AdminListTableViewController.swift */,
-				04B3835A23FC053F006B57B1 /* UserListTableViewController.swift */,
-				04B3836023FC0DBE006B57B1 /* AddAdminViewController.swift */,
-				04B3835E23FC0D5C006B57B1 /* AdminLoginViewController.swift */,
-			);
-			name = Admin;
-			path = /Users/mac/Documents/EcoParty_Ios_Admin/EcoParty_Ios_Admin/Admin;
-			sourceTree = "<absolute>";
-		};
 		B683615C23FBFB430019C14F = {
 			isa = PBXGroup;
 			children = (
@@ -83,7 +62,7 @@
 				B683616A23FBFB430019C14F /* SceneDelegate.swift */,
 				B683616C23FBFB430019C14F /* ViewController.swift */,
 				B683616E23FBFB430019C14F /* Main.storyboard */,
-				04B3836223FC0F0F006B57B1 /* Admin */,
+				04B383A323FF9AD7006B57B1 /* AdminTableViewController.swift */,
 				B683617123FBFB450019C14F /* Assets.xcassets */,
 				B683617323FBFB450019C14F /* LaunchScreen.storyboard */,
 				B683617623FBFB450019C14F /* Info.plist */,
@@ -162,14 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B3836123FC0DBE006B57B1 /* AddAdminViewController.swift in Sources */,
 				B683616D23FBFB430019C14F /* ViewController.swift in Sources */,
-				04B3835D23FC0C5E006B57B1 /* AdminSelfTableViewController.swift in Sources */,
-				04B3835923FC0508006B57B1 /* AdminListTableViewController.swift in Sources */,
-				04B3835B23FC053F006B57B1 /* UserListTableViewController.swift in Sources */,
+				04B383A423FF9AD7006B57B1 /* AdminTableViewController.swift in Sources */,
 				B683616923FBFB430019C14F /* AppDelegate.swift in Sources */,
 				B683616B23FBFB430019C14F /* SceneDelegate.swift in Sources */,
-				04B3835F23FC0D5C006B57B1 /* AdminLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
