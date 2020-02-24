@@ -119,6 +119,7 @@
 		B683616723FBFB430019C14F /* EcoParty_Ios_Admin */ = {
 			isa = PBXGroup;
 			children = (
+				B6FFF89B2403EE16007FF58E /* AdminList */,
 				B6FFF8982403D79C007FF58E /* News.storyboard */,
 				B695F1422403D71E00F2057A /* Warn.storyboard */,
 				B695F13D2403D60A00F2057A /* Party.storyboard */,
@@ -134,6 +135,13 @@
 				B695F1342403AC5A00F2057A /* Common.swift */,
 			);
 			path = EcoParty_Ios_Admin;
+			sourceTree = "<group>";
+		};
+		B6FFF89B2403EE16007FF58E /* AdminList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AdminList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
