@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--檢舉管理-->
+        <scene sceneID="bMZ-oa-p8A">
+            <objects>
+                <viewController storyboardIdentifier="PartyView" id="rN7-vT-zzK" customClass="WarnViewController" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9H9-8i-HfX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5gY-un-wcd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuy-Bs-vjP">
+                                <rect key="frame" x="0.0" y="31" width="375" height="636"/>
+                                <connections>
+                                    <segue destination="gqN-y7-o4G" kind="embed" id="9CM-Zk-c3r"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1T0-bh-OOA">
+                                <rect key="frame" x="0.0" y="31" width="375" height="636"/>
+                                <connections>
+                                    <segue destination="diT-iS-twF" kind="embed" id="hfK-r9-I4M"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fuy-Bs-vjP" firstAttribute="leading" secondItem="9H9-8i-HfX" secondAttribute="leading" id="K5e-8g-VVT"/>
+                            <constraint firstItem="5gY-un-wcd" firstAttribute="top" secondItem="HqO-yH-0LB" secondAttribute="top" id="QX8-TC-bXw"/>
+                            <constraint firstAttribute="trailing" secondItem="fuy-Bs-vjP" secondAttribute="trailing" id="UgF-y4-0Ox"/>
+                            <constraint firstItem="fuy-Bs-vjP" firstAttribute="height" secondItem="1T0-bh-OOA" secondAttribute="height" id="Ygn-bp-66L"/>
+                            <constraint firstItem="1T0-bh-OOA" firstAttribute="trailing" secondItem="HqO-yH-0LB" secondAttribute="trailing" id="YpD-P1-OpF"/>
+                            <constraint firstItem="1T0-bh-OOA" firstAttribute="leading" secondItem="HqO-yH-0LB" secondAttribute="leading" id="aAC-8A-18Q"/>
+                            <constraint firstItem="5gY-un-wcd" firstAttribute="leading" secondItem="9H9-8i-HfX" secondAttribute="leading" id="bhE-j6-5z5"/>
+                            <constraint firstItem="fuy-Bs-vjP" firstAttribute="width" secondItem="1T0-bh-OOA" secondAttribute="width" id="f18-YL-u0X"/>
+                            <constraint firstItem="fuy-Bs-vjP" firstAttribute="top" secondItem="5gY-un-wcd" secondAttribute="bottom" id="i6P-pl-VEP"/>
+                            <constraint firstItem="1T0-bh-OOA" firstAttribute="bottom" secondItem="HqO-yH-0LB" secondAttribute="bottom" id="p7h-Lb-rtd"/>
+                            <constraint firstItem="fuy-Bs-vjP" firstAttribute="bottom" secondItem="HqO-yH-0LB" secondAttribute="bottom" id="v6Q-1t-IP4"/>
+                            <constraint firstItem="HqO-yH-0LB" firstAttribute="top" secondItem="5gY-un-wcd" secondAttribute="top" id="vCQ-qI-IVf"/>
+                            <constraint firstAttribute="trailing" secondItem="5gY-un-wcd" secondAttribute="trailing" id="x38-Ka-Hex"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HqO-yH-0LB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="檢舉管理" id="pt9-xN-Uls"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZB1-6g-b5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1983" y="1635"/>
+        </scene>
+        <!--UITableViewController-9Rp-Ic-kNn-->
+        <scene sceneID="31T-xB-DFh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UITableViewController-9Rp-Ic-kNn" id="gqN-y7-o4G" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w7H-JI-kfZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3105" y="1962"/>
+        </scene>
+        <!--UITableViewController-dnb-jN-fho-->
+        <scene sceneID="9Ik-pF-vaJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UITableViewController-dnb-jN-fho" id="diT-iS-twF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7IV-F0-8Jh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3105" y="1254"/>
+        </scene>
+    </scenes>
+</document>

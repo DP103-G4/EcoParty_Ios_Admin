@@ -9,11 +9,12 @@
 import UIKit
 
 class WarnViewController: UIViewController {
+    let url_server = URL(string: common_url + "NewsServlet")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        }
     }
     
 
@@ -27,4 +28,3 @@ class WarnViewController: UIViewController {
     }
     */
 
-}

@@ -12,7 +12,7 @@ struct PartyClient {
     static var shared = PartyClient()
     
     func getAllPartys(completionHandler: @escaping ([Party]?) -> ()) {
-        if let url = URL(string: "url"){
+        if let url = URL(string: "http://127.0.0.1:8080/EcoParty/PartyServlet"){
             URLSession.shared.dataTask(with: url) { (data, respose, error) in
                 let decoder = JSONDecoder()
                 let dateFormatter = ISO8601DateFormatter()

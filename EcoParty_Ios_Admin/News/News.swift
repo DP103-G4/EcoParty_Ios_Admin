@@ -8,9 +8,11 @@
 
 import Foundation
 struct News : Codable {
-    var news_id : Int
-    var news_title : String
-    var news_content : String
-    var news_img : Data
-    var news_time : Date
+    var id : Int
+    var title : String
+    var content : String
+//    var news_img : Data
+    var time : Date
+   
+    
 }
