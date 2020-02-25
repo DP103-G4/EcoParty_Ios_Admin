@@ -27,14 +27,10 @@ class NewsTableViewController: UITableViewController {
     
     func showNews(_ requestParam:[String:String]){
         executeTask(url_server!, requestParam) { (data, response, error) in
-            let dateFormatter = ISO8601DateFormatter()
-            dateFormatter.formatOptions = [.withInternetDateTime]
-            
+            let format = DateFormatter()
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
-                               let data = try decoder.singleValueContainer().decode(String.self)
-                               return dateFormatter.date(from: data) ?? Date()
-                           })
+            decoder.dateDecodingStrategy = .formatted(format)
             
             if error == nil {
                 if data != nil {
