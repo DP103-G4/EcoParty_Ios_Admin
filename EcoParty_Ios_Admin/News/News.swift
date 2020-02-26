@@ -8,11 +8,13 @@
 
 import Foundation
 struct News : Codable {
-    var id : Int
+    var id : Int?
     var title : String
     var content : String
-//    var news_img : Data
-    var time : Date
-   
+    var time : Date?
     
+    struct imageList:Codable {
+        var image:Data
+        var id:Int
+    }
 }

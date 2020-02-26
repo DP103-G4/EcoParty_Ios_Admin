@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FLs-1v-gVg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FLs-1v-gVg">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -305,7 +305,7 @@
         <!--View Controller-->
         <scene sceneID="lGi-9x-zuf">
             <objects>
-                <viewController id="33y-bs-bm4" customClass="ViewController" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="33y-bs-bm4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="26H-qh-6Nu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -405,7 +405,7 @@
         <!--View Controller-->
         <scene sceneID="AzM-Zl-cPP">
             <objects>
-                <viewController id="EsC-OP-Fxy" customClass="ViewController" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EsC-OP-Fxy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ibb-ZE-0yf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -442,10 +442,10 @@
             </objects>
             <point key="canvasLocation" x="9511" y="-1094"/>
         </scene>
-        <!--Admin Table View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="Wd4-Lp-Lxf">
             <objects>
-                <tableViewController id="UKu-tE-jfh" customClass="AdminTableViewController" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="UKu-tE-jfh" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eO2-RT-ojW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -506,12 +506,13 @@
         <!--Warn-->
         <scene sceneID="t8o-Da-TgA">
             <objects>
-                <viewControllerPlaceholder storyboardName="Warn" referencedIdentifier="Warn" id="TFa-uN-cNR" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Warn" id="TFa-uN-cNR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Yoo-7K-zB7"/>
                     <navigationItem key="navigationItem" id="NLD-9Y-jWG"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEE-eG-7aX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8882" y="921"/>
+            <point key="canvasLocation" x="7501" y="588"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tVX-hN-HLy">
@@ -542,11 +543,11 @@
                         <color key="selectedImageTintColor" name="主色藍"/>
                     </tabBar>
                     <connections>
-                        <segue destination="IWo-Ce-0JF" kind="relationship" relationship="viewControllers" id="sPN-hM-glx"/>
-                        <segue destination="lDS-Vp-xe2" kind="relationship" relationship="viewControllers" id="H9t-x4-bMn"/>
-                        <segue destination="X8h-84-vI1" kind="relationship" relationship="viewControllers" id="soo-Ox-wVh"/>
-                        <segue destination="VD3-mt-08p" kind="relationship" relationship="viewControllers" id="sBK-FN-RWm"/>
+                        <segue destination="v9x-zm-oCz" kind="relationship" relationship="viewControllers" id="Edy-Ka-JBk"/>
+                        <segue destination="wHk-l8-0SJ" kind="relationship" relationship="viewControllers" id="xJ6-Hh-u3E"/>
+                        <segue destination="TFa-uN-cNR" kind="relationship" relationship="viewControllers" id="PGT-tY-HUL"/>
                         <segue destination="nKu-gU-baC" kind="relationship" relationship="viewControllers" id="Xbv-wd-rl1"/>
+                        <segue destination="VD3-mt-08p" kind="relationship" relationship="viewControllers" id="sBK-FN-RWm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OO3-L5-3U7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -556,79 +557,24 @@
         <!--Party-->
         <scene sceneID="zL3-ct-Abx">
             <objects>
-                <viewControllerPlaceholder storyboardName="Party" referencedIdentifier="Party" id="v9x-zm-oCz" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Party" id="v9x-zm-oCz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="e7d-6y-glv"/>
                     <navigationItem key="navigationItem" id="RUy-Fi-VYb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2uc-YP-yyj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6964" y="922"/>
+            <point key="canvasLocation" x="7180" y="589"/>
         </scene>
         <!--News-->
         <scene sceneID="8UG-ny-A5z">
             <objects>
-                <viewControllerPlaceholder storyboardName="News" referencedIdentifier="News" id="wHk-l8-0SJ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="News" id="wHk-l8-0SJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="28J-nl-0LE"/>
                     <navigationItem key="navigationItem" id="rkE-if-ClD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oU9-5d-8QG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7947" y="922"/>
-        </scene>
-        <!--審核活動-->
-        <scene sceneID="har-1E-DXe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IWo-Ce-0JF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="審核活動" image="flag.fill" catalog="system" id="MD6-sd-IiU"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zes-X2-prO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="v9x-zm-oCz" kind="relationship" relationship="rootViewController" id="pxi-vc-YNn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gbm-sa-H9G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6436" y="1037"/>
-        </scene>
-        <!--最新消息-->
-        <scene sceneID="MKs-fE-0KA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lDS-Vp-xe2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="最新消息" image="text.badge.plus" catalog="system" id="pKi-Ss-VuD"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gMe-Wr-cad">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wHk-l8-0SJ" kind="relationship" relationship="rootViewController" id="NE7-6O-xyQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wIY-Ef-7Oy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7398" y="1037"/>
-        </scene>
-        <!--檢舉管理-->
-        <scene sceneID="ZoZ-7S-hpX">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X8h-84-vI1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="檢舉管理" image="exclamationmark.triangle.fill" catalog="system" id="64a-Be-BR0"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="isk-aF-7Aa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="TFa-uN-cNR" kind="relationship" relationship="rootViewController" id="82f-GC-jb4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oEh-sA-5Cn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8345" y="1037"/>
+            <point key="canvasLocation" x="7347" y="589"/>
         </scene>
         <!--管理員-->
         <scene sceneID="7pW-9e-4qK">
@@ -671,13 +617,10 @@
     </scenes>
     <resources>
         <image name="cat" width="128" height="256"/>
-        <image name="exclamationmark.triangle.fill" catalog="system" width="64" height="56"/>
-        <image name="flag.fill" catalog="system" width="64" height="60"/>
         <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
         <image name="plus" catalog="system" width="64" height="56"/>
-        <image name="text.badge.plus" catalog="system" width="64" height="54"/>
         <namedColor name="主色藍">
             <color red="0.49019607843137253" green="0.74509803921568629" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

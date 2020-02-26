@@ -292,11 +292,11 @@
             </objects>
             <point key="canvasLocation" x="9991.3043478260879" y="1289.7321428571429"/>
         </scene>
-        <!--Item-->
+        <!--活動管理-->
         <scene sceneID="Bxq-hM-F0s">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wQz-x6-4pf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="trash" catalog="system" id="dWg-9V-B7N"/>
+                    <tabBarItem key="tabBarItem" title="活動管理" image="flag" catalog="system" id="dWg-9V-B7N"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eVT-O3-QgJ">
@@ -314,8 +314,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="flag" catalog="system" width="64" height="60"/>
         <image name="item0" width="1024" height="683"/>
-        <image name="trash" catalog="system" width="60" height="64"/>
         <namedColor name="背景淺灰">
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 let common_url = "http://127.0.0.1:8080/EcoParty/"
-
-func executeTask(_ url_server: URL, _ requestParam: [String:String], completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+func executeTask(_ url_server: URL, _ requestParam: [String:Any], completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
     // 將輸出資料列印出來除錯用
     print("output: \(requestParam)")
     
@@ -21,9 +20,9 @@ func executeTask(_ url_server: URL, _ requestParam: [String:String], completionH
     let encoder = JSONEncoder()
     // JSON含有日期時間，encode必須指定日期時間格式
     encoder.dateEncodingStrategy = .formatted(format)
-//    let jsonData = try! JSONSerialization.data(withJSONObject: requestParam)
     
-    let jsonData = try! encoder.encode(requestParam)
+    let jsonData = try! JSONSerialization.data(withJSONObject: requestParam)
+//    let jsonData = try! encoder.encode(requestParam)
     
     var request = URLRequest(url: url_server)
     request.httpMethod = "POST"

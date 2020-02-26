@@ -10,6 +10,8 @@ import UIKit
 
 class NewsTableViewController: UITableViewController {
     var newsies = [News]()
+    var imageList = [News.imageList]()
+    
     let url_server = URL(string: common_url + "NewsServlet")
     
     override func viewWillAppear(_ animated: Bool) {
@@ -20,9 +22,39 @@ class NewsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "最新消息"
         
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // 尚未刪除server資料
+        var requestParam = [String: Any]()
+        requestParam["action"] = "newsDelete"
+        requestParam["id"] = self.newsies[indexPath.row].id
+        executeTask(self.url_server!, requestParam
+            , completionHandler: { (data, response, error) in
+                if error == nil {
+                    if data != nil {
+                        if let result = String(data: data!, encoding: .utf8) {
+                            if let count = Int(result) {
+                                // 確定server端刪除資料後，才將client端資料刪除
+                                if count != 0 {
+                                    self.newsies.remove(at: indexPath.row)
+                                    self.imageList.remove(at: indexPath.row)
+                                    
+                                    DispatchQueue.main.async {
+                                        tableView.deleteRows(at: [indexPath], with: .automatic)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    print(error!.localizedDescription)
+                }
+        })
+        
+    }
     // MARK: - Table view data source
     
     func showNews(_ requestParam:[String:String]){
@@ -63,9 +95,35 @@ class NewsTableViewController: UITableViewController {
         
         let news = newsies[indexPath.row]
         cell.newsTitleLabel.text = news.title
-        cell.newsTimeLabel.text = "\(news.time)"
+        let formatter = DateFormatter()
+        formatter.locale=Locale(identifier: "zh_Hant_Tw")
+        formatter.dateFormat = "MM月dd日 E HH:mm"
+        let timeText = formatter.string(from: news.time!)
+        cell.newsTimeLabel.text = timeText
         cell.newsContentLabel.text = news.content
         // Configure the cell...
+        // 尚未取得圖片，另外開啟task請求
+        var requestParam = [String: Any]()
+        requestParam["action"] = "getImage"
+        requestParam["id"] = news.id
+        // 圖片寬度為tableViewCell的1/4，ImageView的寬度也建議在storyboard加上比例設定的constraint
+        requestParam["imageSize"] = cell.frame.width
+        var image: UIImage?
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    image = UIImage(data: data!)
+                    self.imageList.append(News.imageList(image: data!, id: news.id!))
+                }
+                if image == nil {
+                    image = UIImage(named: "pig")
+                }
+                DispatchQueue.main.async { cell.newsImageView.image = image }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+        
         
         return cell
     }
@@ -106,14 +164,28 @@ class NewsTableViewController: UITableViewController {
      }
      */
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as? NewsDetailViewController
+        if let row = tableView.indexPathForSelectedRow?.row{
+            controller?.news = newsies[row]
+            for i in 0...imageList.count {
+                if imageList[i].id == newsies[row].id {
+                    controller?.newsImage = imageList[i].image
+                    break
+                }
+            }
+            imageList.removeAll()
+        }
+        controller?.delegate = self
+    }
+    
+    
+}
+
+extension NewsTableViewController: NewsDetailViewControllerDelegate{
     
 }

@@ -25,7 +25,7 @@ class PartyTableViewController: UITableViewController  {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
 //        return partys.count
-        return 10
+        return partys.count
     }
 
     
@@ -83,4 +83,10 @@ class PartyTableViewController: UITableViewController  {
     }
     */
 
+    func showPartys(_ requestParam:[String:Any]){
+        executeTask(url_server!, requestParam) { (data, response, error) in
+            <#code#>
+        }
+        
+    }
 }
