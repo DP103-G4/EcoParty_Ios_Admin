@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//test
 struct News : Codable {
     var id : Int?
     var title : String
