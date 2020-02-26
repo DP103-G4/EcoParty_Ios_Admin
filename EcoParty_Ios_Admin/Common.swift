@@ -21,9 +21,9 @@ func executeTask(_ url_server: URL, _ requestParam: [String:String], completionH
     let encoder = JSONEncoder()
     // JSON含有日期時間，encode必須指定日期時間格式
     encoder.dateEncodingStrategy = .formatted(format)
-//    let jsonData = try! JSONSerialization.data(withJSONObject: requestParam)
     
-    let jsonData = try! encoder.encode(requestParam)
+    let jsonData = try! JSONSerialization.data(withJSONObject: requestParam)
+//    let jsonData = try! encoder.encode(requestParam)
     
     var request = URLRequest(url: url_server)
     request.httpMethod = "POST"

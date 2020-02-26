@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046F54F5240650E3009F7EAF /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F54F4240650E3009F7EAF /* Admin.swift */; };
+		046F54F924065189009F7EAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F54F824065189009F7EAF /* User.swift */; };
+		046F54FB2406549E009F7EAF /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046F54FA2406549E009F7EAF /* AdminLoginViewController.swift */; };
 		B65293C223FFEDD900D15211 /* PartyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65293C123FFEDD900D15211 /* PartyCollectionViewCell.swift */; };
 		B67900C3240120570078E7B8 /* PartyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67900C2240120570078E7B8 /* PartyCollectionViewController.swift */; };
 		B67900C52401494B0078E7B8 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67900C42401494B0078E7B8 /* NewsTableViewCell.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		046F54F4240650E3009F7EAF /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
+		046F54F824065189009F7EAF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		046F54FA2406549E009F7EAF /* AdminLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginViewController.swift; sourceTree = "<group>"; };
 		B65293C123FFEDD900D15211 /* PartyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyCollectionViewCell.swift; sourceTree = "<group>"; };
 		B67900C2240120570078E7B8 /* PartyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyCollectionViewController.swift; sourceTree = "<group>"; };
 		B67900C42401494B0078E7B8 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -140,6 +146,9 @@
 		B6FFF89B2403EE16007FF58E /* AdminList */ = {
 			isa = PBXGroup;
 			children = (
+				046F54F4240650E3009F7EAF /* Admin.swift */,
+				046F54F824065189009F7EAF /* User.swift */,
+				046F54FA2406549E009F7EAF /* AdminLoginViewController.swift */,
 			);
 			path = AdminList;
 			sourceTree = "<group>";
@@ -225,14 +234,17 @@
 				B679368C23FFAABF0078C79D /* NewsTableViewController.swift in Sources */,
 				B67900C72401495F0078E7B8 /* News.swift in Sources */,
 				B67900C52401494B0078E7B8 /* NewsTableViewCell.swift in Sources */,
+				046F54F924065189009F7EAF /* User.swift in Sources */,
 				B679369D23FFBFA90078C79D /* PartyClient.swift in Sources */,
 				B67900C3240120570078E7B8 /* PartyCollectionViewController.swift in Sources */,
 				B67900C924014DF70078E7B8 /* NewsDetailViewController.swift in Sources */,
 				B679369523FFAD320078C79D /* PartyTableViewCell.swift in Sources */,
+				046F54FB2406549E009F7EAF /* AdminLoginViewController.swift in Sources */,
 				B683616923FBFB430019C14F /* AppDelegate.swift in Sources */,
 				B695F1332403665000F2057A /* WarnViewController.swift in Sources */,
 				B683616B23FBFB430019C14F /* SceneDelegate.swift in Sources */,
 				B679369923FFBCC20078C79D /* PartyDetialViewCellViewController.swift in Sources */,
+				046F54F5240650E3009F7EAF /* Admin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
