@@ -28,9 +28,6 @@
 		B683617523FBFB450019C14F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B683617323FBFB450019C14F /* LaunchScreen.storyboard */; };
 		B695F1332403665000F2057A /* WarnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B695F1322403665000F2057A /* WarnViewController.swift */; };
 		B695F1352403AC5A00F2057A /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B695F1342403AC5A00F2057A /* Common.swift */; };
-		B695F13E2403D60A00F2057A /* Party.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B695F13D2403D60A00F2057A /* Party.storyboard */; };
-		B695F1432403D71E00F2057A /* Warn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B695F1422403D71E00F2057A /* Warn.storyboard */; };
-		B6FFF89A2403D79C007FF58E /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FFF8982403D79C007FF58E /* News.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,9 +54,6 @@
 		B683617623FBFB450019C14F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B695F1322403665000F2057A /* WarnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarnViewController.swift; sourceTree = "<group>"; };
 		B695F1342403AC5A00F2057A /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		B695F13D2403D60A00F2057A /* Party.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Party.storyboard; sourceTree = "<group>"; };
-		B695F1422403D71E00F2057A /* Warn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Warn.storyboard; sourceTree = "<group>"; };
-		B6FFF8992403D79C007FF58E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = EcoParty_Ios_Admin/Base.lproj/News.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				B6FFF89B2403EE16007FF58E /* AdminList */,
-				B6FFF8982403D79C007FF58E /* News.storyboard */,
-				B695F1422403D71E00F2057A /* Warn.storyboard */,
-				B695F13D2403D60A00F2057A /* Party.storyboard */,
 				B679368A23FFA97C0078C79D /* Warn */,
 				B679368923FFA9720078C79D /* News */,
 				B679368823FFA9620078C79D /* Party */,
@@ -211,12 +202,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B695F1432403D71E00F2057A /* Warn.storyboard in Resources */,
-				B6FFF89A2403D79C007FF58E /* News.storyboard in Resources */,
 				B683617523FBFB450019C14F /* LaunchScreen.storyboard in Resources */,
 				B683617223FBFB450019C14F /* Assets.xcassets in Resources */,
 				B683617023FBFB430019C14F /* Main.storyboard in Resources */,
-				B695F13E2403D60A00F2057A /* Party.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,14 +253,6 @@
 				B683617423FBFB450019C14F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		B6FFF8982403D79C007FF58E /* News.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B6FFF8992403D79C007FF58E /* Base */,
-			);
-			name = News.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
