@@ -83,10 +83,10 @@ class PartyTableViewController: UITableViewController  {
     }
     */
 
-    func showPartys(_ requestParam:[String:Any]){
-        executeTask(url_server!, requestParam) { (data, response, error) in
-            <#code#>
-        }
-        
-    }
+//    func showPartys(_ requestParam:[String:Any]){
+//        executeTask(url_server!, requestParam) { (data, response, error) in
+//            <#code#>
+//        }
+//
+//    }
 }
