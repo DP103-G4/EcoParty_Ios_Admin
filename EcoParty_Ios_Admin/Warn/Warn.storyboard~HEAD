@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fks-Wy-9s3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Warn View Controller-->
+        <scene sceneID="bMZ-oa-p8A">
+            <objects>
+                <viewController storyboardIdentifier="Warn" id="rN7-vT-zzK" customClass="WarnViewController" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9H9-8i-HfX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5gY-un-wcd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuy-Bs-vjP">
+                                <rect key="frame" x="0.0" y="119" width="414" height="694"/>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1T0-bh-OOA">
+                                <rect key="frame" x="0.0" y="119" width="414" height="694"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fuy-Bs-vjP" firstAttribute="leading" secondItem="9H9-8i-HfX" secondAttribute="leading" id="K5e-8g-VVT"/>
+                            <constraint firstItem="5gY-un-wcd" firstAttribute="top" secondItem="HqO-yH-0LB" secondAttribute="top" id="QX8-TC-bXw"/>
+                            <constraint firstAttribute="trailing" secondItem="fuy-Bs-vjP" secondAttribute="trailing" id="UgF-y4-0Ox"/>
+                            <constraint firstItem="fuy-Bs-vjP" firstAttribute="height" secondItem="1T0-bh-OOA" secondAttribute="height" id="Ygn-bp-66L"/>
+                            <constraint firstItem="1T0-bh-OOA" firstAttribute="trailing" secondItem="HqO-yH-0LB" secondAttribute="trailing" id="YpD-P1-OpF"/>
+                            <constraint firstItem="1T0-bh-OOA" firstAttribute="leading" secondItem="HqO-yH-0LB" secondAttribute="leading" id="aAC-8A-18Q"/>
+                            <constraint firstItem="5gY-un-wcd" firstAttribute="leading" secondItem="9H9-8i-HfX" secondAttribute="leading" id="bhE-j6-5z5"/>
+                            <constraint firstItem="fuy-Bs-vjP" firstAttribute="width" secondItem="1T0-bh-OOA" secondAttribute="width" id="f18-YL-u0X"/>
+                            <constraint firstItem="fuy-Bs-vjP" firstAttribute="top" secondItem="5gY-un-wcd" secondAttribute="bottom" id="i6P-pl-VEP"/>
+                            <constraint firstItem="1T0-bh-OOA" firstAttribute="bottom" secondItem="HqO-yH-0LB" secondAttribute="bottom" id="p7h-Lb-rtd"/>
+                            <constraint firstItem="fuy-Bs-vjP" firstAttribute="bottom" secondItem="HqO-yH-0LB" secondAttribute="bottom" id="v6Q-1t-IP4"/>
+                            <constraint firstItem="HqO-yH-0LB" firstAttribute="top" secondItem="5gY-un-wcd" secondAttribute="top" id="vCQ-qI-IVf"/>
+                            <constraint firstAttribute="trailing" secondItem="5gY-un-wcd" secondAttribute="trailing" id="x38-Ka-Hex"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HqO-yH-0LB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xxz-v7-IJc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZB1-6g-b5y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2892.753623188406" y="1634.5982142857142"/>
+        </scene>
+        <!--檢舉管理-->
+        <scene sceneID="uPM-ue-gNU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fks-Wy-9s3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="檢舉管理" image="exclamationmark.triangle" catalog="system" id="pc2-kk-TT0"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uT9-Se-odp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rN7-vT-zzK" kind="relationship" relationship="rootViewController" id="lB7-gP-5pz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wEM-pU-AvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1982.608695652174" y="1634.5982142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="exclamationmark.triangle" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
