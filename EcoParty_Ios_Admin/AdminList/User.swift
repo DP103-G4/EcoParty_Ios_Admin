@@ -9,12 +9,23 @@
 import Foundation
 
 struct User: Codable {
-    var user_id: Int
-    var user_account: String
-    var user_password: String
-    var user_email: String
-    var user_name: String
-    var user_img: Data
-    var user_over: Bool
-    var user_time: Date
+    //要跟sever一樣變數名稱
+    var id: Int?
+    var account: String?
+    var password: String?
+    var email: String?
+    var name: String?
+    var isOver: Bool?
+    
+    
+//    public init(_ id: Int, _ account: String, _ password: String, _ email: String, _ name: String, _ isOver: Bool){
+//        self.id = userId
+//        self.account = account
+//        self.password = password
+//        self.email = email
+//        self.name = name
+//        self.isOver = isOver
+//       
+//    }
+    
 }

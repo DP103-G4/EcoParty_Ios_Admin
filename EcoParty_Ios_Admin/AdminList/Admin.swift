@@ -13,6 +13,7 @@ struct Admin: Codable {
 //    var admin_id: Int
     var adminAccount: String
     var adminPassword: String
+    var action = "isAdminLogin"
 
     init(_ adminAccount: String, _ adminPassword: String) {
         self.adminAccount = adminAccount
