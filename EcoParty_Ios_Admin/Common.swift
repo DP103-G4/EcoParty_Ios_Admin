@@ -12,7 +12,7 @@ import UIKit
 let common_url = "http://127.0.0.1:8080/EcoParty/"
 func executeTask(_ url_server: URL, _ requestParam: [String:Any], completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
     // 將輸出資料列印出來除錯用
-    print("output: \(requestParam)")
+//    print("output: \(requestParam)")
     
     let format = DateFormatter()
     format.dateFormat = "yyyy-MM-dd HH:mm:ss"

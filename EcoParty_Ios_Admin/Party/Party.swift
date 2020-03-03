@@ -8,14 +8,22 @@
 
 import Foundation
 struct Party : Codable {
-    var party_id:Int
-    var owner_id:Int
-    var party_cover_img:Data
-    var party_name:String
-    var party_start_time:Date
-    var party_address:String
-    var party_content:String
-    var party_count_upper_limit:Int
-    var user_account:String
+    var id:Int
+    var ownerId:Int
+    var name:String
+    var startTime:Date
+    var address:String
+    var content:String
+    var countUpperLimit:Int
+    var ownerName:String
     
+    struct imageList:Codable {
+           var image:Data?
+           var id:Int?
+    }
+    
+}
+
+struct Review : Codable {
+    var id:Int
 }
