@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04BF7E35240A33180011FD4C /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF7E34240A33180011FD4C /* UserListTableViewController.swift */; };
+		04BF7E3B240A84670011FD4C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF7E3A240A84670011FD4C /* UserCell.swift */; };
+		04BF7E3D240A85590011FD4C /* AdminSelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF7E3C240A85590011FD4C /* AdminSelfViewController.swift */; };
+		04FE5174240DFD6C000AEED2 /* UserOverTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE5173240DFD6C000AEED2 /* UserOverTVC.swift */; };
+		04FE5178240E0E94000AEED2 /* UserManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE5177240E0E94000AEED2 /* UserManageVC.swift */; };
 		B65293C223FFEDD900D15211 /* PartyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65293C123FFEDD900D15211 /* PartyCollectionViewCell.swift */; };
 		B675FA6B2407624000FF4755 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675FA6A2407624000FF4755 /* Admin.swift */; };
 		B675FA6D2407624F00FF4755 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675FA6C2407624F00FF4755 /* User.swift */; };
@@ -33,6 +38,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04BF7E34240A33180011FD4C /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
+		04BF7E3A240A84670011FD4C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		04BF7E3C240A85590011FD4C /* AdminSelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSelfViewController.swift; sourceTree = "<group>"; };
+		04FE5173240DFD6C000AEED2 /* UserOverTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOverTVC.swift; sourceTree = "<group>"; };
+		04FE5177240E0E94000AEED2 /* UserManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManageVC.swift; sourceTree = "<group>"; };
 		B65293C123FFEDD900D15211 /* PartyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyCollectionViewCell.swift; sourceTree = "<group>"; };
 		B675FA6A2407624000FF4755 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		B675FA6C2407624F00FF4755 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -146,6 +156,11 @@
 				B675FA6A2407624000FF4755 /* Admin.swift */,
 				B675FA6C2407624F00FF4755 /* User.swift */,
 				B675FA72240765B400FF4755 /* AdminLoginViewController.swift */,
+				04BF7E34240A33180011FD4C /* UserListTableViewController.swift */,
+				04BF7E3A240A84670011FD4C /* UserCell.swift */,
+				04BF7E3C240A85590011FD4C /* AdminSelfViewController.swift */,
+				04FE5173240DFD6C000AEED2 /* UserOverTVC.swift */,
+				04FE5177240E0E94000AEED2 /* UserManageVC.swift */,
 			);
 			path = AdminList;
 			sourceTree = "<group>";
@@ -230,8 +245,11 @@
 				B679369B23FFBD850078C79D /* Party.swift in Sources */,
 				B675FA6D2407624F00FF4755 /* User.swift in Sources */,
 				B679368C23FFAABF0078C79D /* NewsTableViewController.swift in Sources */,
+				04BF7E3B240A84670011FD4C /* UserCell.swift in Sources */,
+				04BF7E35240A33180011FD4C /* UserListTableViewController.swift in Sources */,
 				B67900C72401495F0078E7B8 /* News.swift in Sources */,
 				B67900C52401494B0078E7B8 /* NewsTableViewCell.swift in Sources */,
+				04BF7E3D240A85590011FD4C /* AdminSelfViewController.swift in Sources */,
 				B67900C3240120570078E7B8 /* PartyCollectionViewController.swift in Sources */,
 				B67900C924014DF70078E7B8 /* NewsDetailViewController.swift in Sources */,
 				B679369523FFAD320078C79D /* PartyTableViewCell.swift in Sources */,
@@ -240,6 +258,9 @@
 				B683616B23FBFB430019C14F /* SceneDelegate.swift in Sources */,
 				B675FA752407C2C300FF4755 /* PartyCollectionReusableView.swift in Sources */,
 				B675FA6B2407624000FF4755 /* Admin.swift in Sources */,
+				04FE5174240DFD6C000AEED2 /* UserOverTVC.swift in Sources */,
+				B679369923FFBCC20078C79D /* PartyDetialViewCellViewController.swift in Sources */,
+				04FE5178240E0E94000AEED2 /* UserManageVC.swift in Sources */,
 				B675FA73240765B400FF4755 /* AdminLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
