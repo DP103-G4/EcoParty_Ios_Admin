@@ -22,7 +22,8 @@ class NewsDetailViewController: UIViewController,UITextViewDelegate,UITextFieldD
     let url_server = URL(string: common_url + "NewsServlet")
     var news:News?
     var newsImage:Data?
-    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true}
     override func viewDidLoad() {
         super.viewDidLoad()
         newsTextView.delegate = self
@@ -126,6 +127,9 @@ extension NewsDetailViewController: UIImagePickerControllerDelegate, UINavigatio
             imageButton.setImage(image, for: .normal)
         }
         dismiss(animated: true, completion: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
 }
 

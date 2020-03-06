@@ -25,6 +25,11 @@
 		B679369023FFAAF90078C79D /* PartyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679368F23FFAAF90078C79D /* PartyTableViewController.swift */; };
 		B679369523FFAD320078C79D /* PartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679369423FFAD320078C79D /* PartyTableViewCell.swift */; };
 		B679369B23FFBD850078C79D /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679369A23FFBD850078C79D /* Party.swift */; };
+		B67D6E65240F4EAA00417F65 /* MsgWarnTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D6E64240F4EAA00417F65 /* MsgWarnTableViewController.swift */; };
+		B67D6E67240F4ECF00417F65 /* PieceWarnTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D6E66240F4ECF00417F65 /* PieceWarnTableViewController.swift */; };
+		B67D6E6B240F4F0000417F65 /* WarnTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D6E6A240F4F0000417F65 /* WarnTableViewCell.swift */; };
+		B67D6E6D240F4FB900417F65 /* Warn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D6E6C240F4FB900417F65 /* Warn.swift */; };
+		B67D6E6F240F5A6300417F65 /* WarnDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D6E6E240F5A6300417F65 /* WarnDetailViewController.swift */; };
 		B683616923FBFB430019C14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683616823FBFB430019C14F /* AppDelegate.swift */; };
 		B683616B23FBFB430019C14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683616A23FBFB430019C14F /* SceneDelegate.swift */; };
 		B683617023FBFB430019C14F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B683616E23FBFB430019C14F /* Main.storyboard */; };
@@ -56,6 +61,11 @@
 		B679368F23FFAAF90078C79D /* PartyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTableViewController.swift; sourceTree = "<group>"; };
 		B679369423FFAD320078C79D /* PartyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTableViewCell.swift; sourceTree = "<group>"; };
 		B679369A23FFBD850078C79D /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
+		B67D6E64240F4EAA00417F65 /* MsgWarnTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgWarnTableViewController.swift; sourceTree = "<group>"; };
+		B67D6E66240F4ECF00417F65 /* PieceWarnTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceWarnTableViewController.swift; sourceTree = "<group>"; };
+		B67D6E6A240F4F0000417F65 /* WarnTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarnTableViewCell.swift; sourceTree = "<group>"; };
+		B67D6E6C240F4FB900417F65 /* Warn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warn.swift; sourceTree = "<group>"; };
+		B67D6E6E240F5A6300417F65 /* WarnDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarnDetailViewController.swift; sourceTree = "<group>"; };
 		B683616523FBFB430019C14F /* EcoParty_Ios_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoParty_Ios_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B683616823FBFB430019C14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B683616A23FBFB430019C14F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +122,11 @@
 			children = (
 				B695F1422403D71E00F2057A /* Warn.storyboard */,
 				B695F1322403665000F2057A /* WarnViewController.swift */,
+				B67D6E64240F4EAA00417F65 /* MsgWarnTableViewController.swift */,
+				B67D6E66240F4ECF00417F65 /* PieceWarnTableViewController.swift */,
+				B67D6E6A240F4F0000417F65 /* WarnTableViewCell.swift */,
+				B67D6E6C240F4FB900417F65 /* Warn.swift */,
+				B67D6E6E240F5A6300417F65 /* WarnDetailViewController.swift */,
 			);
 			path = Warn;
 			sourceTree = "<group>";
@@ -244,11 +259,14 @@
 				B65293C223FFEDD900D15211 /* PartyCollectionViewCell.swift in Sources */,
 				B679369B23FFBD850078C79D /* Party.swift in Sources */,
 				B675FA6D2407624F00FF4755 /* User.swift in Sources */,
+				B67D6E6B240F4F0000417F65 /* WarnTableViewCell.swift in Sources */,
+				B67D6E6F240F5A6300417F65 /* WarnDetailViewController.swift in Sources */,
 				B679368C23FFAABF0078C79D /* NewsTableViewController.swift in Sources */,
 				04BF7E3B240A84670011FD4C /* UserCell.swift in Sources */,
 				04BF7E35240A33180011FD4C /* UserListTableViewController.swift in Sources */,
 				B67900C72401495F0078E7B8 /* News.swift in Sources */,
 				B67900C52401494B0078E7B8 /* NewsTableViewCell.swift in Sources */,
+				B67D6E6D240F4FB900417F65 /* Warn.swift in Sources */,
 				04BF7E3D240A85590011FD4C /* AdminSelfViewController.swift in Sources */,
 				B67900C3240120570078E7B8 /* PartyCollectionViewController.swift in Sources */,
 				B67900C924014DF70078E7B8 /* NewsDetailViewController.swift in Sources */,
@@ -257,9 +275,10 @@
 				B695F1332403665000F2057A /* WarnViewController.swift in Sources */,
 				B683616B23FBFB430019C14F /* SceneDelegate.swift in Sources */,
 				B675FA752407C2C300FF4755 /* PartyCollectionReusableView.swift in Sources */,
+				B67D6E67240F4ECF00417F65 /* PieceWarnTableViewController.swift in Sources */,
 				B675FA6B2407624000FF4755 /* Admin.swift in Sources */,
+				B67D6E65240F4EAA00417F65 /* MsgWarnTableViewController.swift in Sources */,
 				04FE5174240DFD6C000AEED2 /* UserOverTVC.swift in Sources */,
-				B679369923FFBCC20078C79D /* PartyDetialViewCellViewController.swift in Sources */,
 				04FE5178240E0E94000AEED2 /* UserManageVC.swift in Sources */,
 				B675FA73240765B400FF4755 /* AdminLoginViewController.swift in Sources */,
 			);

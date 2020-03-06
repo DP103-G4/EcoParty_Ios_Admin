@@ -19,11 +19,12 @@ class PartyCollectionViewController: UICollectionViewController {
     var reviewImgId = [Review]()
     var partyImage:Data?
     let url_server = URL(string: common_url + "ReviewImgServlet")
-    var height:CGFloat = 300.0
     
     
     
     override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+        
         var requestParam = [String: Any]()
         requestParam["action"] = "getAllByParty"
         requestParam["partyId"] = party?.id
@@ -42,8 +43,7 @@ class PartyCollectionViewController: UICollectionViewController {
         layout?.estimatedItemSize = .zero
         
         //設定header高度
-        //        layout!.headerReferenceSize = CGSize(width: collectionView.frame.width, height: UIView.layoutFittingExpandedSize.height)
-        
+//        height: UIView.layoutFittingExpandedSize.height
         
         
     }
@@ -157,6 +157,12 @@ class PartyCollectionViewController: UICollectionViewController {
         let timeText = formatter.string(from: party!.startTime)
         headerView.partyTimeLabel.text = timeText
         headerView.partyCountLabel.text = "\(party!.countUpperLimit)"
+        
+        let layout = collectionViewLayout as? UICollectionViewFlowLayout
+        let height = headerView.heightStackView.bounds.size.height
+        print("stack高度：\(height)")
+        layout!.headerReferenceSize = CGSize(width: collectionView.frame.width, height: height)
+
         return headerView
     }
     
@@ -218,5 +224,8 @@ class PartyCollectionViewController: UICollectionViewController {
                 }
             }
         }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
     }
 }
