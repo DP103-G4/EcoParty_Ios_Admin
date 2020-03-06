@@ -269,7 +269,7 @@
         <image name="no_image" width="150" height="92"/>
         <image name="text.badge.plus" catalog="system" width="64" height="54"/>
         <namedColor name="背景淺灰">
-            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
