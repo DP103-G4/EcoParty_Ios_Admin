@@ -8,8 +8,7 @@
 
 import UIKit
 
-protocol NewsDetailViewControllerDelegate {
-}
+
 
 class NewsDetailViewController: UIViewController,UITextViewDelegate,UITextFieldDelegate {
     
@@ -17,7 +16,6 @@ class NewsDetailViewController: UIViewController,UITextViewDelegate,UITextFieldD
     @IBOutlet weak var newsTitleTextField: UITextField!
     @IBOutlet weak var newsTextView: UITextView!
     @IBOutlet weak var imageButton: UIButton!
-    var delegate: NewsDetailViewControllerDelegate?
     var changePhoto = false
     
     var imageUpload: UIImage?
@@ -30,7 +28,7 @@ class NewsDetailViewController: UIViewController,UITextViewDelegate,UITextFieldD
         newsTextView.delegate = self
         newsTitleTextField.delegate = self
         imageButton.imageView?.contentMode = .scaleAspectFill
-
+        
         if let news = news,let newsImage = newsImage{
             newsTitleTextField.text = news.title
             newsTextView.text = news.content
@@ -49,14 +47,14 @@ class NewsDetailViewController: UIViewController,UITextViewDelegate,UITextFieldD
     }
     
     func textView(_ textView: UITextView,
-    shouldChangeTextIn range: NSRange,
-    replacementText text: String) -> Bool{
+                  shouldChangeTextIn range: NSRange,
+                  replacementText text: String) -> Bool{
         if let originalText = newsTextView.text, let _ = Range(range, in: originalText) {
             errorLabel[2].text = ""
         }
         return true
     }
-
+    
     @IBAction func showImage(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
@@ -119,12 +117,14 @@ class NewsDetailViewController: UIViewController,UITextViewDelegate,UITextFieldD
     
 }
 extension NewsDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         changePhoto = true
         errorLabel[0].text = ""
-        let image = info[.originalImage] as? UIImage
-        imageUpload = image
-        imageButton.setImage(image, for: .normal)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            imageUpload = image
+            imageButton.setImage(image, for: .normal)
+        }
         dismiss(animated: true, completion: nil)
     }
 }

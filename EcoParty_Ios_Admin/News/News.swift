@@ -15,7 +15,7 @@ struct News : Codable {
     var time : Date?
     
     struct imageList:Codable {
-        var image:Data
+        var image:Data?
         var id:Int
     }
 }

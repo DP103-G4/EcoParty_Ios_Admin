@@ -8,12 +8,41 @@
 
 import UIKit
 
-class UserOverTVC: UITableViewController {
+class UserOverTVC: UITableViewController, UISearchBarDelegate {
 
-    var users = [User]()
-       let url_server = URL(string: common_url + "UserServlet")
+  
+    
+    @IBOutlet weak var userOverSearchBar: UISearchBar!
+    
+    let url_server = URL(string: common_url + "UserServlet")
+       //原始
+       var users = [User]()
+       //搜尋後
+       var searchUsers = [User]()
+       //搜尋後是否顯示
+       var search = false
        
+       func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+           let text = userOverSearchBar.text ?? ""
+           //不搜尋 顯示原始資料
+           if text == "" {
+               search = false
+           } else {
+               searchUsers = users.filter({ (user) -> Bool in
+                   return user.account!.uppercased().contains(text.uppercased())  || user.name!.uppercased().contains(text.uppercased())
+               })
+               search = true
+           }
+           tableView.reloadData()
+       }
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+           userOverSearchBar.resignFirstResponder()
+           
+       }
        
+    
        override func viewDidLoad() {
            super.viewDidLoad()
            tableViewAddRefreshControl()
@@ -65,22 +94,31 @@ class UserOverTVC: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return users.count
+        if search {
+            return searchUsers.count
+        } else {
+            return users.count
+        }
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        var userOverList: User
+        if search {
+            userOverList = searchUsers[indexPath.row]
+        } else {
+            userOverList = users[indexPath.row]
+        }
+        
         let cellID = "userCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! UserCell
-        let user = users[indexPath.row]
+//        let user = users[indexPath.row]
 
         
         // 未取得圖片，另外開啟task請求
         var requestParam = [String: Any]()
         requestParam["action"] = "getImage"
-        requestParam["id"] = user.id
+        requestParam["id"] = userOverList.id
         
         // 寬度為tableViewCell的1/4，ImageView的寬度也建議在storyboard加上比例設定的constraint
         requestParam["imageSize"] = cell.frame.width / 4
@@ -101,18 +139,17 @@ class UserOverTVC: UITableViewController {
                 }
             }
             
-        cell.userAccount.text = user.account
-        cell.userName.text = user.name
+        cell.userAccount.text = userOverList.account
+        cell.userName.text = userOverList.name
             return cell
     }
   
-    //左滑刪除資料＝停權
+    //左滑復權，資料進一般名單
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .normal, title: "復權"){(action, view , bool) in
-            // 尚未刪除server資料
+        let back = UIContextualAction(style: .normal, title: "復權"){(action, view , bool) in
             var requestParam = [String: Any]()
-            requestParam["action"] = "userDelete"
-            requestParam["userId"] = self.users[indexPath.row].id
+            requestParam["action"] = "userBack"
+            requestParam["id"] = self.users[indexPath.row].id
             executeTask(self.url_server!, requestParam, completionHandler: {
                 (data, response, error) in
                 if error == nil {
@@ -133,11 +170,12 @@ class UserOverTVC: UITableViewController {
                 }
             })
         }
-        delete.backgroundColor = .orange
-        let swipeActions = UISwipeActionsConfiguration(actions: [delete])
+        back.backgroundColor = .green
+        let swipeActions = UISwipeActionsConfiguration(actions: [back])
         //false:滑到底不會觸發動作
         swipeActions.performsFirstActionWithFullSwipe = false
         return swipeActions
+    
     }
 
     /*

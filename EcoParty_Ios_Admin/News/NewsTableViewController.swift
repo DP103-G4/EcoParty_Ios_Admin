@@ -101,7 +101,6 @@ class NewsTableViewController: UITableViewController {
         let timeText = formatter.string(from: news.time!)
         cell.newsTimeLabel.text = timeText
         cell.newsContentLabel.text = news.content
-        // Configure the cell...
         // 尚未取得圖片，另外開啟task請求
         var requestParam = [String: Any]()
         requestParam["action"] = "getImage"
@@ -123,8 +122,6 @@ class NewsTableViewController: UITableViewController {
                 print(error!.localizedDescription)
             }
         }
-        
-        
         return cell
     }
     
@@ -180,12 +177,5 @@ class NewsTableViewController: UITableViewController {
             }
             imageList.removeAll()
         }
-        controller?.delegate = self
     }
-    
-    
-}
-
-extension NewsTableViewController: NewsDetailViewControllerDelegate{
-    
 }

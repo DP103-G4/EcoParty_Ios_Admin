@@ -16,6 +16,7 @@
 		B675FA6B2407624000FF4755 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675FA6A2407624000FF4755 /* Admin.swift */; };
 		B675FA6D2407624F00FF4755 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675FA6C2407624F00FF4755 /* User.swift */; };
 		B675FA73240765B400FF4755 /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675FA72240765B400FF4755 /* AdminLoginViewController.swift */; };
+		B675FA752407C2C300FF4755 /* PartyCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B675FA742407C2C300FF4755 /* PartyCollectionReusableView.swift */; };
 		B67900C3240120570078E7B8 /* PartyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67900C2240120570078E7B8 /* PartyCollectionViewController.swift */; };
 		B67900C52401494B0078E7B8 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67900C42401494B0078E7B8 /* NewsTableViewCell.swift */; };
 		B67900C72401495F0078E7B8 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67900C62401495F0078E7B8 /* News.swift */; };
@@ -23,7 +24,6 @@
 		B679368C23FFAABF0078C79D /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679368B23FFAABF0078C79D /* NewsTableViewController.swift */; };
 		B679369023FFAAF90078C79D /* PartyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679368F23FFAAF90078C79D /* PartyTableViewController.swift */; };
 		B679369523FFAD320078C79D /* PartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679369423FFAD320078C79D /* PartyTableViewCell.swift */; };
-		B679369923FFBCC20078C79D /* PartyDetialViewCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679369823FFBCC20078C79D /* PartyDetialViewCellViewController.swift */; };
 		B679369B23FFBD850078C79D /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = B679369A23FFBD850078C79D /* Party.swift */; };
 		B683616923FBFB430019C14F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683616823FBFB430019C14F /* AppDelegate.swift */; };
 		B683616B23FBFB430019C14F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683616A23FBFB430019C14F /* SceneDelegate.swift */; };
@@ -47,6 +47,7 @@
 		B675FA6A2407624000FF4755 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		B675FA6C2407624F00FF4755 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B675FA72240765B400FF4755 /* AdminLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginViewController.swift; sourceTree = "<group>"; };
+		B675FA742407C2C300FF4755 /* PartyCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyCollectionReusableView.swift; sourceTree = "<group>"; };
 		B67900C2240120570078E7B8 /* PartyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyCollectionViewController.swift; sourceTree = "<group>"; };
 		B67900C42401494B0078E7B8 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		B67900C62401495F0078E7B8 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -54,7 +55,6 @@
 		B679368B23FFAABF0078C79D /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		B679368F23FFAAF90078C79D /* PartyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTableViewController.swift; sourceTree = "<group>"; };
 		B679369423FFAD320078C79D /* PartyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTableViewCell.swift; sourceTree = "<group>"; };
-		B679369823FFBCC20078C79D /* PartyDetialViewCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDetialViewCellViewController.swift; sourceTree = "<group>"; };
 		B679369A23FFBD850078C79D /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
 		B683616523FBFB430019C14F /* EcoParty_Ios_Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoParty_Ios_Admin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B683616823FBFB430019C14F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,10 +87,10 @@
 				B695F13D2403D60A00F2057A /* Party.storyboard */,
 				B679368F23FFAAF90078C79D /* PartyTableViewController.swift */,
 				B679369423FFAD320078C79D /* PartyTableViewCell.swift */,
-				B679369823FFBCC20078C79D /* PartyDetialViewCellViewController.swift */,
 				B679369A23FFBD850078C79D /* Party.swift */,
 				B65293C123FFEDD900D15211 /* PartyCollectionViewCell.swift */,
 				B67900C2240120570078E7B8 /* PartyCollectionViewController.swift */,
+				B675FA742407C2C300FF4755 /* PartyCollectionReusableView.swift */,
 			);
 			path = Party;
 			sourceTree = "<group>";
@@ -157,9 +157,9 @@
 				B675FA6C2407624F00FF4755 /* User.swift */,
 				B675FA72240765B400FF4755 /* AdminLoginViewController.swift */,
 				04BF7E34240A33180011FD4C /* UserListTableViewController.swift */,
+				04FE5173240DFD6C000AEED2 /* UserOverTVC.swift */,
 				04BF7E3A240A84670011FD4C /* UserCell.swift */,
 				04BF7E3C240A85590011FD4C /* AdminSelfViewController.swift */,
-				04FE5173240DFD6C000AEED2 /* UserOverTVC.swift */,
 				04FE5177240E0E94000AEED2 /* UserManageVC.swift */,
 			);
 			path = AdminList;
@@ -256,9 +256,9 @@
 				B683616923FBFB430019C14F /* AppDelegate.swift in Sources */,
 				B695F1332403665000F2057A /* WarnViewController.swift in Sources */,
 				B683616B23FBFB430019C14F /* SceneDelegate.swift in Sources */,
+				B675FA752407C2C300FF4755 /* PartyCollectionReusableView.swift in Sources */,
 				B675FA6B2407624000FF4755 /* Admin.swift in Sources */,
 				04FE5174240DFD6C000AEED2 /* UserOverTVC.swift in Sources */,
-				B679369923FFBCC20078C79D /* PartyDetialViewCellViewController.swift in Sources */,
 				04FE5178240E0E94000AEED2 /* UserManageVC.swift in Sources */,
 				B675FA73240765B400FF4755 /* AdminLoginViewController.swift in Sources */,
 			);

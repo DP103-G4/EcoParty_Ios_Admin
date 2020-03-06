@@ -27,8 +27,15 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fhs-TC-sIg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" name="主色綠"/>
-                        <color key="selectedImageTintColor" name="選取黃"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="淺灰"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="選取深綠"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" name="淺灰"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="v9x-zm-oCz" kind="relationship" relationship="viewControllers" id="Edy-Ka-JBk"/>
@@ -190,7 +197,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ig1-1H-CXt">
-                                <rect key="frame" x="221" y="321.5" width="60" height="24"/>
+                                <rect key="frame" x="221" y="322" width="111" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" name="深灰"/>
@@ -204,7 +211,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="admin0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fZ-g9-N8H">
-                                <rect key="frame" x="221" y="361.5" width="61" height="22"/>
+                                <rect key="frame" x="221" y="362" width="111" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" name="深灰"/>
@@ -220,6 +227,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logoutButton:" destination="ugP-Us-fEO" eventType="touchUpInside" id="fxl-3t-3OO"/>
+                                    <segue destination="cyL-y6-zPA" kind="show" identifier="backHome" id="Dwd-bX-mQz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -259,24 +267,19 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uiU-G1-doU" userLabel="user">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="QPe-PV-dwP" kind="embed" id="Den-xF-8Q8"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEZ-Wk-qgi" userLabel="userOver">
-                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="lGH-Wg-J8z" kind="embed" id="Yga-m0-sR8"/>
                                 </connections>
                             </containerView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zki-bp-nwb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" name="主色綠"/>
                         <viewLayoutGuide key="safeArea" id="P0O-S1-d6h"/>
@@ -294,15 +297,27 @@
         <!--User List Table View Controller-->
         <scene sceneID="3hp-eP-xGG">
             <objects>
-                <tableViewController id="QPe-PV-dwP" customClass="UserListTableViewController" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="userListTableViewController" id="QPe-PV-dwP" customClass="UserListTableViewController" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="Twg-t2-xLP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="498"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="sectionIndexBackgroundColor" name="主色綠"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="請輸入會員帳號或名稱" id="BFa-ej-Cjj">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="QPe-PV-dwP" id="SLq-ja-X9m"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" rowHeight="77" id="uu3-71-7Gf" customClass="UserCell" customModule="EcoParty_Ios_Admin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="77"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uu3-71-7Gf" id="fW4-PP-WeM" customClass="UserCell" customModule="EcoParty_Ios_Admin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
@@ -346,10 +361,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="cme-x5-hcB"/>
+                    <connections>
+                        <outlet property="userSearchBar" destination="BFa-ej-Cjj" id="wq3-Uw-Z3E"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHf-do-dsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11458" y="-1367"/>
+            <point key="canvasLocation" x="11457" y="-1582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="egJ-m7-j8t">
@@ -419,13 +437,21 @@
             <objects>
                 <tableViewController id="lGH-Wg-J8z" customClass="UserOverTVC" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="pMq-cl-ffN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="498"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="sectionIndexBackgroundColor" name="主色綠"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="請輸入會員帳號或名稱" id="x1Y-Ag-oWX">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="lGH-Wg-J8z" id="qcR-aj-v54"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" rowHeight="70" id="kOD-3T-gg5" customClass="UserCell" customModule="EcoParty_Ios_Admin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kOD-3T-gg5" id="ShS-Oy-08v" customClass="UserCell" customModule="EcoParty_Ios_Admin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
@@ -469,17 +495,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="aod-Op-q7b"/>
+                    <connections>
+                        <outlet property="userOverSearchBar" destination="x1Y-Ag-oWX" id="kee-Zs-jua"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26Q-0K-HjV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11564" y="-872"/>
+            <point key="canvasLocation" x="11457" y="-961"/>
         </scene>
     </scenes>
     <resources>
         <image name="person.3" catalog="system" width="72" height="35"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <namedColor name="主色綠">
-            <color red="0.15686274509803921" green="0.68235294117647061" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.36862745098039218" green="0.86274509803921573" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="次色藍">
             <color red="0.3411764705882353" green="0.5607843137254902" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -488,10 +517,20 @@
             <color red="0.9882352941176471" green="0.45490196078431372" blue="0.45490196078431372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="深灰">
-            <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="淺灰">
+            <color red="0.73725490196078436" green="0.73725490196078436" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="選取深綠">
+            <color red="0.29019607843137257" green="0.63137254901960782" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="選取黃">
-            <color red="0.99607843137254903" green="0.77647058823529413" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.95686274509803926" green="0.81176470588235294" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="s8Y-tf-sq4"/>
+        <segue reference="Dwd-bX-mQz"/>
+    </inferredMetricsTieBreakers>
 </document>

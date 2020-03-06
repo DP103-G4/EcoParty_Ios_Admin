@@ -10,6 +10,8 @@ import UIKit
 
 class PartyTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var partyNameLabel: UILabel!
+    @IBOutlet weak var partyImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
