@@ -62,6 +62,8 @@ class MsgWarnTableViewController: UITableViewController {
                 print(error!.localizedDescription)
             }
         }
+        
+//        cell.deleteButton.tag = indexPath.row
         return cell
     }
     

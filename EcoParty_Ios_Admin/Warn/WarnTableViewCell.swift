@@ -28,8 +28,6 @@ class WarnTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBAction func deleteWarn(_ sender: UIButton) {
-        
-    }
+   
     
 }

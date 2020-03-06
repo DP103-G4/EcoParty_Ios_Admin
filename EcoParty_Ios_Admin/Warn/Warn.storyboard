@@ -396,6 +396,7 @@
                                                     </constraints>
                                                     <state key="normal" title="忽略"/>
                                                     <connections>
+                                                        <action selector="deleteWarn:" destination="Mlo-JY-MS6" eventType="touchUpInside" id="Us1-lB-f1V"/>
                                                         <action selector="deleteWarn:" destination="oBa-LX-TQp" eventType="touchUpInside" id="r9M-zN-z9u"/>
                                                     </connections>
                                                 </button>
@@ -414,7 +415,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="deleteButton" destination="S7T-1r-S7h" id="zMx-ot-prs"/>
                                     <outlet property="pieceWarnContentLabel" destination="c96-fe-CQk" id="6he-j5-lNV"/>
                                     <outlet property="pieceWarnImageView" destination="XRF-Wh-SgZ" id="xNd-Vk-y7l"/>
                                     <outlet property="pieceWarnUserLabel" destination="eTg-Bv-yHW" id="zsl-mb-rte"/>
@@ -442,6 +442,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WOz-V1-Y6J"/>
+        <segue reference="Vtz-I9-apr"/>
     </inferredMetricsTieBreakers>
 </document>
