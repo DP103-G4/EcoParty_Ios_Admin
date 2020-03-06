@@ -157,9 +157,9 @@
 				B675FA6C2407624F00FF4755 /* User.swift */,
 				B675FA72240765B400FF4755 /* AdminLoginViewController.swift */,
 				04BF7E34240A33180011FD4C /* UserListTableViewController.swift */,
+				04FE5173240DFD6C000AEED2 /* UserOverTVC.swift */,
 				04BF7E3A240A84670011FD4C /* UserCell.swift */,
 				04BF7E3C240A85590011FD4C /* AdminSelfViewController.swift */,
-				04FE5173240DFD6C000AEED2 /* UserOverTVC.swift */,
 				04FE5177240E0E94000AEED2 /* UserManageVC.swift */,
 			);
 			path = AdminList;
@@ -259,7 +259,6 @@
 				B675FA752407C2C300FF4755 /* PartyCollectionReusableView.swift in Sources */,
 				B675FA6B2407624000FF4755 /* Admin.swift in Sources */,
 				04FE5174240DFD6C000AEED2 /* UserOverTVC.swift in Sources */,
-				B679369923FFBCC20078C79D /* PartyDetialViewCellViewController.swift in Sources */,
 				04FE5178240E0E94000AEED2 /* UserManageVC.swift in Sources */,
 				B675FA73240765B400FF4755 /* AdminLoginViewController.swift in Sources */,
 			);

@@ -14,44 +14,53 @@ class AdminSelfViewController: UIViewController {
          
     @IBOutlet weak var adminIDLabel: UILabel!
     @IBOutlet weak var adminAccountLabel: UILabel!
-     var admins = [Admin]()
+    var admin : Admin!
     let url_server = URL(string: common_url + "AdminServlet")
     
+    override func viewDidLoad() {
+          super.viewDidLoad()
+      }
+
 //    override func viewWillAppear(_ animated: Bool) {
-//        let requestParam =  [ "action" : "findByAdminID" ]
-//        executeTask(url_server!, requestParam) { (data, response, error) in
-//            if error == nil{
+//       showSelf()
+//    }
+
+
+   //顯示自己的編號
+//    func showSelf(){
+//        adminAccountLabel.text = admin.adminAccount
+//        let requestParam = ["action" : "getAdminByAccount"]
+//       
+//        executeTask(url_server!, requestParam) { (data, response, erroe) in
+//            if error == nil {
 //                if data != nil {
-//                    print("input: \(String(data: data! , encoding: .utf8)!)")
-//
-//                    if let result = try? JSONDecoder.decode([Admin].self, from: data!){
+//                    if let result = String(data: data!, encoding: .utf8){
 //
 //                    }
+//
 //                }
 //            }
 //        }
-//
-//    }
-//
-//    func showSelf(_ jsonData: Data){
-//
-//
-//    }
-//
-//
+
+    
+
+//登出
 //    @IBAction func logoutButton(_ sender: Any) {
-//        let adminDefaults = UserDefaults.standard
-//        adminDefaults.set(nil, forKey: "admin")
-//        dismiss(animated: true)
+//
+//
+//        logout(admin: admin){ (result) in
+//            if result {
+//                DispatchQueue.main.async {
+//                    self.performSegue(withIdentifier: "backHome", sender: nil)
+//                }
+//            }
+//
+//        }
+//        return
 //    }
-//
-//
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
-//
+//}
+  
+
 
     /*
     // MARK: - Navigation
@@ -62,5 +71,6 @@ class AdminSelfViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }
