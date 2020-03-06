@@ -18,6 +18,7 @@ struct User: Codable {
     var isOver: Bool?
     
     
+    
 //    public init(_ id: Int, _ account: String, _ password: String, _ email: String, _ name: String, _ isOver: Bool){
 //        self.id = userId
 //        self.account = account

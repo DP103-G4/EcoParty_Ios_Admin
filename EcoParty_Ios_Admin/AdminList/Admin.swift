@@ -10,15 +10,18 @@ import Foundation
 
 struct Admin: Codable {
 
-//    var admin_id: Int
+//    var adminId: Int
     var adminAccount: String
     var adminPassword: String
     var action = "isAdminLogin"
 
     init(_ adminAccount: String, _ adminPassword: String) {
+       
         self.adminAccount = adminAccount
         self.adminPassword = adminPassword
 
     }
+    
+    
 
 }
