@@ -179,7 +179,7 @@
         <!--Admin Self View Controller-->
         <scene sceneID="e64-Sz-UxV">
             <objects>
-                <viewController id="ugP-Us-fEO" customClass="AdminSelfViewController" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AdminSelfViewController" id="ugP-Us-fEO" customClass="AdminSelfViewController" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pWn-hK-pAf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,10 +225,6 @@
                                     <color key="titleColor" name="主色綠"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                 </state>
-                                <connections>
-                                    <action selector="logoutButton:" destination="ugP-Us-fEO" eventType="touchUpInside" id="fxl-3t-3OO"/>
-                                    <segue destination="cyL-y6-zPA" kind="show" identifier="backHome" id="Dwd-bX-mQz"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -242,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFN-VO-Nsr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11532" y="-134.48275862068968"/>
+            <point key="canvasLocation" x="10705" y="-43"/>
         </scene>
         <!--User ManageVC-->
         <scene sceneID="Akm-jT-o4z">
@@ -252,8 +248,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yGa-2q-gOa">
-                                <rect key="frame" x="0.0" y="20" width="375" height="45"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uiU-G1-doU" userLabel="user">
+                                <rect key="frame" x="0.0" y="121" width="375" height="497"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="QPe-PV-dwP" kind="embed" id="Den-xF-8Q8"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEZ-Wk-qgi" userLabel="userOver">
+                                <rect key="frame" x="0.0" y="121" width="375" height="497"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="lGH-Wg-J8z" kind="embed" id="Yga-m0-sR8"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yGa-2q-gOa">
+                                <rect key="frame" x="0.0" y="76" width="375" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="主色綠"/>
                                 <segments>
@@ -266,20 +276,6 @@
                                     <action selector="changeUser:" destination="cWW-F2-IWc" eventType="valueChanged" id="bSE-SQ-sz2"/>
                                 </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uiU-G1-doU" userLabel="user">
-                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="QPe-PV-dwP" kind="embed" id="Den-xF-8Q8"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aEZ-Wk-qgi" userLabel="userOver">
-                                <rect key="frame" x="0.0" y="72" width="375" height="546"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="lGH-Wg-J8z" kind="embed" id="Yga-m0-sR8"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" name="主色綠"/>
                         <viewLayoutGuide key="safeArea" id="P0O-S1-d6h"/>
@@ -299,7 +295,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="userListTableViewController" id="QPe-PV-dwP" customClass="UserListTableViewController" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="Twg-t2-xLP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="497"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="sectionIndexBackgroundColor" name="主色綠"/>
@@ -403,15 +399,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bJ-UK-aFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10592.799999999999" y="-134.48275862068968"/>
+            <point key="canvasLocation" x="9830" y="-42"/>
         </scene>
         <!--會員管理-->
         <scene sceneID="ypb-OT-SZn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="nBg-mX-6yQ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nBg-mX-6yQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="會員管理" image="person.3" catalog="system" id="w9V-AS-cvh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f1e-uU-b7p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="主色綠"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -437,7 +434,7 @@
             <objects>
                 <tableViewController id="lGH-Wg-J8z" customClass="UserOverTVC" customModule="EcoParty_Ios_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="pMq-cl-ffN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="546"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="497"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="sectionIndexBackgroundColor" name="主色綠"/>
@@ -529,8 +526,4 @@
             <color red="0.95686274509803926" green="0.81176470588235294" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="s8Y-tf-sq4"/>
-        <segue reference="Dwd-bX-mQz"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -77,14 +77,10 @@ class AdminLoginViewController: UIViewController, UITextFieldDelegate {
             if result {
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "showHome", sender: nil)
-
                 }
             }
         }
-        
         return
-        
-         
     }
     
     /*
