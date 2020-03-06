@@ -14,7 +14,7 @@ struct Warn : Codable {
     var pieceId:Int?
     var userId:Int
     var time:Date?
-    var content:String
+    var content:String?
     var account:String
     
     struct imgList {

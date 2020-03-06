@@ -61,7 +61,6 @@ class PieceWarnTableViewController: UITableViewController {
                 print(error!.localizedDescription)
             }
         }
-        cell.deleteButton.tag = indexPath.row
         return cell
     }
     
@@ -127,21 +126,15 @@ class PieceWarnTableViewController: UITableViewController {
      */
     
     @IBAction func deleteWarn(_ sender: UIButton) {
-//        let point = sender.convert(CGPoint.zero, from: tableView)
-//        print(tableView.contentSize, point)
-//        sender.isSelected.toggle()
-//        let warn = pieceWarns[sender.tag]
-        var cell = sender.superview
-        while cell is UITableViewCell == false {
-            cell = cell?.superview
-        }
-        if let cell = cell as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
+        let point : CGPoint = sender.convert(.zero, to: tableView)
+        print(tableView.contentSize, point)
+        if let indexPath = tableView.indexPathForRow(at: point){
+
             let pieceWarn = pieceWarns[indexPath.row]
             var requestParam = [String: Any]()
             requestParam["action"] = "warnDelete"
             requestParam["id"] = pieceWarn.id
-            executeTask(url_server!, requestParam
-                , completionHandler: { (data, response, error) in
+            executeTask(url_server!, requestParam, completionHandler: { (data, response, error) in
                     if error == nil {
                         if data != nil {
                             if let result = String(data: data!, encoding: .utf8) {

@@ -129,7 +129,42 @@ class MsgWarnTableViewController: UITableViewController {
 
     
     // MARK: - Navigation
+    @IBAction func deleteWarn(_ sender: UIButton) {
+        let point : CGPoint = sender.convert(.zero, to: tableView)
+        print(tableView.contentSize, point)
+        if let indexPath = tableView.indexPathForRow(at: point){
 
+            let pieceWarn = msgWarns[indexPath.row]
+            var requestParam = [String: Any]()
+            requestParam["action"] = "warnDelete"
+            requestParam["id"] = pieceWarn.id
+            executeTask(url_server!, requestParam, completionHandler: { (data, response, error) in
+                    if error == nil {
+                        if data != nil {
+                            if let result = String(data: data!, encoding: .utf8) {
+                                if let count = Int(result) {
+                                    // 確定server端刪除資料後，才將client端資料刪除
+                                    if count != 0 {
+                                        self.msgWarns.remove(at: indexPath.row)
+                                        self.imageList.remove(at: indexPath.row)
+                                        
+                                        DispatchQueue.main.async {
+                                            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        print(error!.localizedDescription)
+                        let controller = UIAlertController(title: "error", message: "delete warn fail", preferredStyle: .alert)
+                        controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(controller, animated: true, completion: nil)
+                    }
+            })
+        }
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let controller = segue.destination as? WarnDetailViewController
