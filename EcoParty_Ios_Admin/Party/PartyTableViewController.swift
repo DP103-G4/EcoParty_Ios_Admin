@@ -97,7 +97,6 @@ class PartyTableViewController: UITableViewController  {
             
             for i in 0...imageList.count {
                 if imageList[i].id == partys[row].id {
-                    print("\(imageList[i].id) :  \(partys[row].id)")
                     controller?.partyImage = imageList[i].image
                     break
                 }

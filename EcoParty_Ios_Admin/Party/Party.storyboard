@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="item0" translatesAutoresizingMaskIntoConstraints="NO" id="Sop-X4-73T">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="189"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="184"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="活動名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXv-ps-Br6">
                                             <rect key="frame" x="16" y="11" width="283" height="21"/>
@@ -46,7 +46,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Sop-X4-73T" firstAttribute="leading" secondItem="7bi-EP-fqy" secondAttribute="leading" id="47a-6b-zWf"/>
-                                        <constraint firstAttribute="bottom" secondItem="Sop-X4-73T" secondAttribute="bottom" id="Y9P-Rn-qyR"/>
+                                        <constraint firstAttribute="bottom" secondItem="Sop-X4-73T" secondAttribute="bottom" constant="5" id="Y9P-Rn-qyR"/>
                                         <constraint firstAttribute="trailing" secondItem="Sop-X4-73T" secondAttribute="trailing" id="eYi-2I-mW1"/>
                                         <constraint firstItem="Sop-X4-73T" firstAttribute="top" secondItem="7bi-EP-fqy" secondAttribute="top" id="qBr-YZ-oPI"/>
                                     </constraints>
