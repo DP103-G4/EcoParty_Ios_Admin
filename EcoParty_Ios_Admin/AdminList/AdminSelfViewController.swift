@@ -14,13 +14,15 @@ class AdminSelfViewController: UIViewController {
          
     @IBOutlet weak var adminIDLabel: UILabel!
     @IBOutlet weak var adminAccountLabel: UILabel!
-    var admin : Admin!
-    let url_server = URL(string: common_url + "AdminServlet")
+//    var admin : Admin!
+//    let url_server = URL(string: common_url + "AdminServlet")
     
     override func viewDidLoad() {
           super.viewDidLoad()
-      }
+    }
 
+    
+    
 //    override func viewWillAppear(_ animated: Bool) {
 //       showSelf()
 //    }
@@ -44,22 +46,7 @@ class AdminSelfViewController: UIViewController {
 
     
 
-//登出
-//    @IBAction func logoutButton(_ sender: Any) {
-//
-//
-//        logout(admin: admin){ (result) in
-//            if result {
-//                DispatchQueue.main.async {
-//                    self.performSegue(withIdentifier: "backHome", sender: nil)
-//                }
-//            }
-//
-//        }
-//        return
-//    }
-//}
-  
+
 
 
     /*
