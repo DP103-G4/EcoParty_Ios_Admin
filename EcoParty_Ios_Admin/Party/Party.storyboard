@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="4"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="partyCell" rowHeight="189" id="40K-Kj-LKQ" customClass="PartyTableViewCell" customModule="EcoParty_Ios_Admin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="189"/>
@@ -28,7 +29,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="189"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="活動名稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXv-ps-Br6">
-                                            <rect key="frame" x="16" y="11" width="70" height="21"/>
+                                            <rect key="frame" x="16" y="11" width="283" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -275,6 +276,7 @@
                                 <outlet property="partyAddressLabel" destination="QmW-wl-YuU" id="gDB-eO-FvE"/>
                                 <outlet property="partyContentLabel" destination="pZa-xS-WQs" id="R7B-1p-fhT"/>
                                 <outlet property="partyCountLabel" destination="y7j-dC-QlU" id="3ea-xG-qhB"/>
+                                <outlet property="partyImage" destination="kEY-t5-lyO" id="Gju-FH-a6k"/>
                                 <outlet property="partyNameLabel" destination="z9N-Pd-9nz" id="GeF-H1-2Tk"/>
                                 <outlet property="partyOwnerLabel" destination="K2S-8b-Gsh" id="TOG-2T-VMX"/>
                                 <outlet property="partyTimeLabel" destination="FmY-o4-DXb" id="75v-lb-7nT"/>

@@ -43,7 +43,7 @@ class PartyCollectionViewController: UICollectionViewController {
         layout?.estimatedItemSize = .zero
         
         //設定header高度
-//        height: UIView.layoutFittingExpandedSize.height
+        //        height: UIView.layoutFittingExpandedSize.height
         
         
     }
@@ -65,19 +65,6 @@ class PartyCollectionViewController: UICollectionViewController {
             }
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-    // MARK: UICollectionViewDataSource
-    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return reviewImgId.count
@@ -112,41 +99,10 @@ class PartyCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    // MARK: UICollectionViewDelegate
-    
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
-    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "partyDetailHeader", for: indexPath) as! PartyCollectionReusableView
-        
+        headerView.partyImage.image = UIImage(data: self.partyImage!)
         headerView.partyNameLabel.text = party?.name
         headerView.partyOwnerLabel.text = party?.ownerName
         headerView.partyContentLabel.text = party?.content
@@ -158,15 +114,16 @@ class PartyCollectionViewController: UICollectionViewController {
         headerView.partyTimeLabel.text = timeText
         headerView.partyCountLabel.text = "\(party!.countUpperLimit)"
         
+        
         let layout = collectionViewLayout as? UICollectionViewFlowLayout
         let height = headerView.heightStackView.bounds.size.height
         print("stack高度：\(height)")
         layout!.headerReferenceSize = CGSize(width: collectionView.frame.width, height: height)
-
+        
         return headerView
     }
     
-    @IBAction func passButton(_ sender: Any) {
+    func passParty(){
         var requestParam = [String: Any]()
         requestParam["action"] = "changePartyState"
         requestParam["id"] = party!.id
@@ -180,7 +137,10 @@ class PartyCollectionViewController: UICollectionViewController {
                         if let count = Int(result) {
                             DispatchQueue.main.async {
                                 // 新增成功則回前頁
-                                if count != 0 {                                            self.navigationController?.popViewController(animated: true)
+                                if count != 0 {
+                                    let inform = Inform(userId: self.party!.ownerId, partyId: self.party!.id, content: "審核通過")
+                                    self.insertInform(inform: inform)
+                                    
                                 } else {
                                     let controller = UIAlertController(title: "error", message: "update fail", preferredStyle: .alert)
                                     controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -196,7 +156,8 @@ class PartyCollectionViewController: UICollectionViewController {
             }
         }
     }
-    @IBAction func outButton(_ sender: Any) {
+    
+    func outParty(){
         var requestParam = [String: Any]()
         requestParam["action"] = "changePartyState"
         requestParam["id"] = party!.id
@@ -209,7 +170,9 @@ class PartyCollectionViewController: UICollectionViewController {
                         if let count = Int(result) {
                             DispatchQueue.main.async {
                                 // 新增成功則回前頁
-                                if count != 0 {                                            self.navigationController?.popViewController(animated: true)
+                                if count != 0 {
+                                    let inform = Inform(userId: self.party!.ownerId, partyId: -2, content: "審核失敗")
+                                    self.insertInform(inform: inform)
                                 } else {
                                     let controller = UIAlertController(title: "error", message: "update fail", preferredStyle: .alert)
                                     controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -224,6 +187,56 @@ class PartyCollectionViewController: UICollectionViewController {
                 }
             }
         }
+    }
+    func insertInform(inform:Inform){
+        var requestParam = [String: Any]()
+        requestParam["action"] = "informInsert"
+        requestParam["inform"] = try! String(data: JSONEncoder().encode(inform), encoding: .utf8)
+        let url_informServer = URL(string: common_url + "InformServlet")
+        executeTask(url_informServer!, requestParam) { (data, response, error) in
+            if error == nil {
+                if data != nil {
+                    if let result = String(data: data!, encoding: .utf8) {
+                        if let count = Int(result) {
+                            DispatchQueue.main.async {
+                                // 新增成功則回前頁
+                                if count != 0 {
+                                    self.navigationController?.popViewController(animated: true)
+                                } else {
+                                    let controller = UIAlertController(title: "error", message: "insert inform fail", preferredStyle: .alert)
+                                    controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                                    self.present(controller, animated: true, completion: nil)
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    @IBAction func passButton(_ sender: Any) {
+        let controller = UIAlertController(title: "注意", message: "你確定要通過『\(party!.name)』的活動審核嗎？", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "確定", style: .default) { (_) in
+            self.passParty()
+        }
+        controller.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
+    }
+    
+    @IBAction func outButton(_ sender: Any) {
+        let controller = UIAlertController(title: "注意", message: "你確定要退回『\(party!.name)』的活動審核嗎？", preferredStyle: .alert)
+               let okAction = UIAlertAction(title: "確定", style: .default) { (_) in
+                   self.outParty()
+               }
+               controller.addAction(okAction)
+               let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+               controller.addAction(cancelAction)
+               present(controller, animated: true, completion: nil)
     }
     override func viewWillDisappear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false

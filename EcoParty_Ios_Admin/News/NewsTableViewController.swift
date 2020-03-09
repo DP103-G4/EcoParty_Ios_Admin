@@ -27,33 +27,40 @@ class NewsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        // 尚未刪除server資料
-        var requestParam = [String: Any]()
-        requestParam["action"] = "newsDelete"
-        requestParam["id"] = self.newsies[indexPath.row].id
-        executeTask(self.url_server!, requestParam
-            , completionHandler: { (data, response, error) in
-                if error == nil {
-                    if data != nil {
-                        if let result = String(data: data!, encoding: .utf8) {
-                            if let count = Int(result) {
-                                // 確定server端刪除資料後，才將client端資料刪除
-                                if count != 0 {
-                                    self.newsies.remove(at: indexPath.row)
-                                    self.imageList.remove(at: indexPath.row)
-                                    
-                                    DispatchQueue.main.async {
-                                        tableView.deleteRows(at: [indexPath], with: .automatic)
+        let controller = UIAlertController(title: "注意", message: "你確定要刪除『\(newsies[indexPath.row].title)』這則消息嗎？", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "確定", style: .default) { (_) in
+            
+            // 尚未刪除server資料
+            var requestParam = [String: Any]()
+            requestParam["action"] = "newsDelete"
+            requestParam["id"] = self.newsies[indexPath.row].id
+            executeTask(self.url_server!, requestParam
+                , completionHandler: { (data, response, error) in
+                    if error == nil {
+                        if data != nil {
+                            if let result = String(data: data!, encoding: .utf8) {
+                                if let count = Int(result) {
+                                    // 確定server端刪除資料後，才將client端資料刪除
+                                    if count != 0 {
+                                        self.newsies.remove(at: indexPath.row)
+                                        self.imageList.remove(at: indexPath.row)
+                                        
+                                        DispatchQueue.main.async {
+                                            tableView.deleteRows(at: [indexPath], with: .automatic)
+                                        }
                                     }
                                 }
                             }
                         }
+                    } else {
+                        print(error!.localizedDescription)
                     }
-                } else {
-                    print(error!.localizedDescription)
-                }
-        })
-        
+            })
+        }
+        controller.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
     }
     // MARK: - Table view data source
     

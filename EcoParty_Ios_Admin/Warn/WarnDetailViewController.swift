@@ -116,11 +116,12 @@ class WarnDetailViewController: UIViewController {
                 } else {
                     print(error!.localizedDescription)
                     let controller = UIAlertController(title: "error", message: "delete warn fail", preferredStyle: .alert)
-                                       controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                                       self.present(controller, animated: true, completion: nil)
+                    controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(controller, animated: true, completion: nil)
                 }
         })
     }
+    
     func deleteMsg() {
         var requestParam = [String: Any]()
         requestParam["action"] = "deleteById"
@@ -149,15 +150,56 @@ class WarnDetailViewController: UIViewController {
                 }
         })
     }
+    func deleteUser(){
+        let url_userServer = URL(string: common_url + "UserServlet")
+        var requestParam = [String: Any]()
+        requestParam["action"] = "userOver"
+        requestParam["id"] = self.msg.userId
+        executeTask(url_userServer!, requestParam
+            , completionHandler: { (data, response, error) in
+                if error == nil {
+                    if data != nil {
+                        if let result = String(data: data!, encoding: .utf8) {
+                            if let count = Int(result) {
+                                // 確定server端刪除資料後，才將client端資料刪除
+                                if count != 0 {
+                                    DispatchQueue.main.async {
+                                        self.deleteMsg()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    print(error!.localizedDescription)
+                    let controller = UIAlertController(title: "error", message: "delete warn fail", preferredStyle: .alert)
+                    controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(controller, animated: true, completion: nil)
+                }
+        })
+    }
     @IBAction func deleteWarn(_ sender: Any) {
         deleteWarn()
     }
     @IBAction func deleteMsg(_ sender: Any) {
-        deleteMsg()
+        let controller = UIAlertController(title: "注意", message: "你確定要刪除『\(msg.account!)』的留言嗎？", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "確定", style: .default) { (_) in
+            self.deleteMsg()
+        }
+        controller.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
     }
     @IBAction func deleteUser(_ sender: Any) {
-        deleteMsg()
-        
+        let controller = UIAlertController(title: "注意", message: "你確定要刪除『\(msg.account!)』的留言並將其停權嗎？", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "確定", style: .default) { (_) in
+            self.deleteUser()
+        }
+        controller.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

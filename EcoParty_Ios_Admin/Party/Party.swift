@@ -27,3 +27,9 @@ struct Party : Codable {
 struct Review : Codable {
     var id:Int
 }
+
+struct Inform:Codable {
+    var userId:Int
+    var partyId:Int
+    var content:String
+}

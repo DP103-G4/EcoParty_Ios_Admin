@@ -16,4 +16,5 @@ class PartyCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var partyTimeLabel: UILabel!
     @IBOutlet weak var partyCountLabel: UILabel!
     @IBOutlet weak var partyContentLabel: UILabel!
+    @IBOutlet weak var partyImage: UIImageView!
 }
