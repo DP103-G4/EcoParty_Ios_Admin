@@ -16,8 +16,8 @@ class WarnViewController: UIViewController {
         super.viewDidLoad()
             containerView[0].isHidden = false
             containerView[1].isHidden = true
-        createGesture()
-
+            createGesture()
+            title="檢舉管理"
         }
     
     func createGesture() {
