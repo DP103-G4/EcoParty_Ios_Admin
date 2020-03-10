@@ -15,9 +15,8 @@ class MsgWarnTableViewController: UITableViewController {
     let url_server = URL(string: common_url + "MsgWarnServlet")
 
     override func viewWillAppear(_ animated: Bool) {
-        var requestParam = [String:String]()
-        requestParam["action"] = "getAll"
-        showMsgWarn(requestParam)
+        
+        showMsgWarn()
         
     }
     override func viewDidLoad() {
@@ -27,7 +26,13 @@ class MsgWarnTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    
+//   //下拉更新
+//    func tableViewAddRefreshControl(){
+//        let refreshControl = UIRefreshControl()
+//        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+//        refreshControl.addTarget(self, action: #selector(showMsgWarn), for: .valueChanged)
+//        self.tableView.refreshControl = refreshControl
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -67,7 +72,9 @@ class MsgWarnTableViewController: UITableViewController {
         return cell
     }
     
-     func showMsgWarn(_ requestParam:[String:String]){
+   @objc func showMsgWarn(){
+    var requestParam = [String:String]()
+    requestParam["action"] = "getAll"
            executeTask(url_server!, requestParam) { (data, response, error) in
                let format = DateFormatter()
                format.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -82,6 +89,12 @@ class MsgWarnTableViewController: UITableViewController {
                        if let result = try? decoder.decode([Warn].self, from: data!) {
                            self.msgWarns = result
                            DispatchQueue.main.async {
+//                            if let control = self.tableView.refreshControl{
+//                                if control.isRefreshing{
+//                                    //停止下拉更新
+//                                    control.endRefreshing()
+//                                }
+//                            }
                                /* 抓到資料後重刷table view */
                                self.tableView.reloadData()
                            }
@@ -92,41 +105,6 @@ class MsgWarnTableViewController: UITableViewController {
                }
            }
        }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
     @IBAction func deleteWarn(_ sender: UIButton) {
