@@ -17,6 +17,16 @@ class AdminLoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         accountTF.delegate = self
         passwordTF.delegate = self
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .default
     }
     
     //return key 跳到下一個輸入框

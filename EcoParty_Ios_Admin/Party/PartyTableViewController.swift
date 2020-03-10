@@ -37,7 +37,8 @@ class PartyTableViewController: UITableViewController  {
         as! PartyTableViewCell
         
         let party = partys[indexPath.row]
-        cell.partyNameLabel.text = party.name
+        cell.partyNameLabel.layer.cornerRadius = 10
+        cell.partyNameLabel.text = " \(party.name) "
         
         // 尚未取得圖片，另外開啟task請求
         var requestParam = [String: Any]()
