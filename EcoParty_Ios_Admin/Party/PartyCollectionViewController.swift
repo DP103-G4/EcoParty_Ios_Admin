@@ -138,7 +138,7 @@ class PartyCollectionViewController: UICollectionViewController {
                             DispatchQueue.main.async {
                                 // 新增成功則回前頁
                                 if count != 0 {
-                                    let inform = Inform(userId: self.party!.ownerId, partyId: self.party!.id, content: "審核通過")
+                                    let inform = Inform(userId: self.party!.ownerId, partyId: self.party!.id, content: "『\(self.party!.name)』活動 審核通過！")
                                     self.insertInform(inform: inform)
                                     
                                 } else {
@@ -171,7 +171,7 @@ class PartyCollectionViewController: UICollectionViewController {
                             DispatchQueue.main.async {
                                 // 新增成功則回前頁
                                 if count != 0 {
-                                    let inform = Inform(userId: self.party!.ownerId, partyId: -2, content: "審核失敗")
+                                    let inform = Inform(userId: self.party!.ownerId, partyId: -2, content: "『\(self.party!.name)』活動 審核失敗！")
                                     self.insertInform(inform: inform)
                                 } else {
                                     let controller = UIAlertController(title: "error", message: "update fail", preferredStyle: .alert)

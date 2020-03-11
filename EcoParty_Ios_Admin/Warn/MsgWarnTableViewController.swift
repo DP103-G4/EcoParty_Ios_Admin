@@ -36,12 +36,14 @@ class MsgWarnTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
         return msgWarns.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WarnCell", for: indexPath) as! WarnTableViewCell
+        
         let msgWarn = msgWarns[indexPath.row]
         cell.msgWarnContentLabel.text = msgWarn.content
         cell.msgWarnUserLabel.text = msgWarn.account
@@ -49,7 +51,7 @@ class MsgWarnTableViewController: UITableViewController {
         var requestParam = [String: Any]()
         requestParam["action"] = "getImage"
         requestParam["id"] = msgWarn.userId
-        // 圖片寬度為tableViewCell的1/4，ImageView的寬度也建議在storyboard加上比例設定的constraint
+        // 圖片寬度為tableViewCell的1，ImageView的寬度也建議在storyboard加上比例設定的constraint
         requestParam["imageSize"] = cell.frame.width
         var image: UIImage?
         let url_userServer = URL(string: common_url + "UserServlet")
@@ -89,13 +91,6 @@ class MsgWarnTableViewController: UITableViewController {
                        if let result = try? decoder.decode([Warn].self, from: data!) {
                            self.msgWarns = result
                            DispatchQueue.main.async {
-//                            if let control = self.tableView.refreshControl{
-//                                if control.isRefreshing{
-//                                    //停止下拉更新
-//                                    control.endRefreshing()
-//                                }
-//                            }
-                               /* 抓到資料後重刷table view */
                                self.tableView.reloadData()
                            }
                        }

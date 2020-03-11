@@ -86,10 +86,6 @@ class AdminLoginViewController: UIViewController, UITextFieldDelegate {
         login(admin: admin) { (result) in
             if result {
                 DispatchQueue.main.async {
-                    //a
-//                    if let controller = self.storyboard?.instantiateViewController(withIdentifier: "contentStoryBoard") {
-//                        present(self.controller, animated: true, completion: nil)
-//                    }
                     self.performSegue(withIdentifier: "showHome", sender: nil)
                 }
             }

@@ -27,12 +27,13 @@ class AdminSelfViewController: UIViewController {
         if let vc = mainStoryboard.instantiateViewController(withIdentifier: "AdminLoginViewController") as? AdminLoginViewController
         {
             navigationController?.pushViewController(vc, animated: false)
+            navigationController?.isNavigationBarHidden = true
+            tabBarController?.tabBar.isHidden = true
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
-        tabBarController?.tabBar.isHidden = true
+        
 
     }
 //    override func viewWillAppear(_ animated: Bool) {

@@ -35,12 +35,11 @@ class PartyTableViewController: UITableViewController  {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "partyCell", for: indexPath)
         as! PartyTableViewCell
-        
         let party = partys[indexPath.row]
         cell.partyNameLabel.layer.cornerRadius = 10
         cell.partyNameLabel.text = " \(party.name) "
         
-        // 尚未取得圖片，另外開啟task請求
+        //尚未取得圖片，另外開啟task請求
         var requestParam = [String: Any]()
         requestParam["action"] = "getCoverImg"
         requestParam["id"] = party.id
@@ -61,6 +60,7 @@ class PartyTableViewController: UITableViewController  {
                 print(error!.localizedDescription)
             }
         }
+        
         return cell
     }
     
