@@ -22,7 +22,19 @@ class AdminSelfViewController: UIViewController {
     }
 
     
+    @IBAction func logOut(_ sender: Any) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        if let vc = mainStoryboard.instantiateViewController(withIdentifier: "AdminLoginViewController") as? AdminLoginViewController
+        {
+            navigationController?.pushViewController(vc, animated: false)
+        }
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = true
+
+    }
 //    override func viewWillAppear(_ animated: Bool) {
 //       showSelf()
 //    }
